@@ -13,3 +13,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.main-container {
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.button-list {
+  display: inline-flex;
+}
+
+.button-list__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.button-list__button {
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: ghostwhite;
+  cursor: pointer;
+  border: 1px solid gray;
+}
+
+.main-container > div:first-child {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  margin-bottom: 15px;
+}
+
+.notification-text {
+  font-size: 18px;
+}
+
+.statistic-list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
