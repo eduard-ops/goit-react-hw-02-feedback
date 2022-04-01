@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import FeedbackOptions from './FeedbackOptions/';
 
+import PropTypes from 'prop-types';
+
 import Statistics from './Statistics/Statistics';
 
 import Notification from './Notification/';
@@ -11,6 +13,10 @@ import Section from './Section/';
 import Container from './Container/';
 
 class App extends Component {
+  static propTypes = {
+    state: PropTypes.object,
+  };
+
   state = {
     good: 0,
     neutral: 0,
