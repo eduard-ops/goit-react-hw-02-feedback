@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-import FeedbackOptions from './Feedback/FeedbackOptions';
+import FeedbackOptions from './FeedbackOptions/';
 
-import Statistics from './Feedback/Statistics';
+import Statistics from './Statistics/Statistics';
 
-import Notification from './Feedback/Notification';
+import Notification from './Notification/';
 
-import Section from './Feedback/Section';
+import Section from './Section/';
+
+import Container from './Container/';
 
 class App extends Component {
   state = {
@@ -59,7 +61,7 @@ class App extends Component {
   render() {
     const { bad, good, neutral } = this.state;
     return (
-      <div className="main-container">
+      <Container className="main-container">
         <Section title={'Plese leave feedback'}>
           <FeedbackOptions
             clickBad={this.handleBad}
@@ -81,7 +83,7 @@ class App extends Component {
             <Notification message={'There is no feedback'} />
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }
