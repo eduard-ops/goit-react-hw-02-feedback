@@ -1,0 +1,15 @@
+.list {
+  display: inline-flex;
+}
+
+.list__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.list__button {
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: ghostwhite;
+  cursor: pointer;
+  border: 1px solid gray;
+}
