@@ -23,27 +23,10 @@ class App extends Component {
     bad: 0,
   };
 
-  handleGood = () => {
+  handleClick = e => {
+    const cur = e.currentTarget.textContent;
     this.setState(prevState => {
-      return {
-        good: prevState.good + 1,
-      };
-    });
-  };
-
-  handleNeutral = () => {
-    this.setState(prevState => {
-      return {
-        neutral: prevState.neutral + 1,
-      };
-    });
-  };
-
-  handleBad = () => {
-    this.setState(prevState => {
-      return {
-        bad: prevState.bad + 1,
-      };
+      return { [cur]: prevState[cur] + 1 };
     });
   };
 
@@ -65,14 +48,15 @@ class App extends Component {
   };
 
   render() {
+    const objKey = Object.keys(this.state);
     const { bad, good, neutral } = this.state;
+
     return (
       <Container className="main-container">
         <Section title={'Plese leave feedback'}>
           <FeedbackOptions
-            clickBad={this.handleBad}
-            clickNeutral={this.handleNeutral}
-            clickGood={this.handleGood}
+            options={objKey}
+            onLeaveFeedback={this.handleClick}
           />
         </Section>
 
