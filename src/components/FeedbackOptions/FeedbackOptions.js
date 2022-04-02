@@ -1,23 +1,23 @@
 import s from './Feedback.module.css';
 
-export default function FeedbackOptions({ clickBad, clickNeutral, clickGood }) {
+import PropTypes from 'prop-types';
+
+export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ul className={s.list}>
-      <li className={s.list__item}>
-        <button className={s.list__button} onClick={clickGood}>
-          Good
-        </button>
-      </li>
-      <li className={s.list__item}>
-        <button className={s.list__button} onClick={clickNeutral}>
-          Neutral
-        </button>
-      </li>
-      <li className={s.list__item}>
-        <button className={s.list__button} onClick={clickBad}>
-          Bad
-        </button>
-      </li>
+      {options.map(item => {
+        return (
+          <li key={item} className={s.list__item}>
+            <button className={s.list__button} onClick={onLeaveFeedback}>
+              {item}
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 }
+
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func,
+};
